@@ -1,4 +1,4 @@
-package com.dedalus.eqpmgmt;
+package com.dedalus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
