@@ -29,7 +29,7 @@ public class EquipementRestController {
 	UsersRepository usersRepository;
 	
 	@GetMapping("/welcome")
-	public String sayhi() {
+	public static String sayhi() {
 		return "Hello👋👋";
 	}
 	@GetMapping("/delete")
