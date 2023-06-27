@@ -11,5 +11,5 @@ import com.dedalus.eqpmgmt.entity.Users;
 
 @Repository
 public interface UsersRepository extends CrudRepository<Users, Long>{
-
+	Users findByEmail(String email);
 }

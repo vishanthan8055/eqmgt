@@ -98,10 +98,12 @@ public class EquipementServiceImpl implements EquipementService {
 	
 	@Override
 	public EquipementMovement addEquipementMovement(EquipementMovement em) {
+		UserRequest ur = em.getUr();
+		ur.setApprovalStatus("Aproved");
 		Equipement eq = em.getEquipment();
 		ServicePoint fsp = em.getFromServicePoint();
 		ServicePoint tsp = em.getToServicePoint();
-		UserRequest ur = em.getUr();
+//		UserRequest ur = em.getUr();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
 		em.setEquipment(eq);
@@ -109,6 +111,7 @@ public class EquipementServiceImpl implements EquipementService {
 		em.setToServicePoint(tsp);
 		em.setUr(ur);
 		em.setMovedAt(dateFormat.format(date));
+		usersRequestRepository.save(ur);
 		return equipementMovementRepository.save(em);
 	}
 	
